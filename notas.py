@@ -41,3 +41,33 @@ def login():
         menu_principal(user)
     else:
         print("Usuario o contraseña incorrectos.\n")
+
+  #historia Us003  
+def menu_principal(user):
+    while True:
+        if user == "profesor":
+            print("1. Registrar Notas")
+            print("2. Salir")
+            opcion = input("Elige una opción: ")
+            if opcion == "1":
+                registrar_notas()
+            elif opcion == "2":
+                break
+            else:
+                print("Opción no válida.\n")
+        else:
+            print("1. Crear Curso")
+            print("2. Ver mis Cursos")
+            print("3. Consultar Nota")
+            print("4. Salir")
+            opcion = input("Elige una opción: ")
+            if opcion == "1":
+                crear_curso_estudiante(user)
+            elif opcion == "2":
+                ver_mis_cursos(user)
+            elif opcion == "3":
+                consultar_notas(user)
+            elif opcion == "4":
+                break
+            else:
+                print("Opción no válida.\n")
