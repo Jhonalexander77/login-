@@ -98,3 +98,18 @@ def consultar_notas(user):
     else:
         print("Aún no tienes una nota registrada.\n")
 
+
+
+#historia de Us005
+def registrar_notas():
+    estudiante = input("Nombre del estudiante: ")
+    if estudiante not in usuarios:
+        print("El estudiante no existe.\n")
+        return
+    nota = input("Nota (0-5): ")
+    try:
+        nota = float(nota)
+        notas[estudiante] = nota
+        print("Nota registrada correctamente.\n")
+    except ValueError:
+        print("Debes ingresar un número válido.\n")
