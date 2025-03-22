@@ -71,3 +71,30 @@ def menu_principal(user):
                 break
             else:
                 print("Opción no válida.\n")
+                
+#historia de Us004
+def crear_curso_estudiante(user):
+    nombre_curso = input("Escribe el nombre de tu curso: ")
+    if nombre_curso:
+        if nombre_curso in cursos[user]:
+            print("Ya tienes este curso registrado.\n")
+        else:
+            cursos[user].append(nombre_curso)
+            print(f"Te has registrado en el curso '{nombre_curso}'.\n")
+
+def ver_mis_cursos(user):
+    if cursos[user]:
+        print("Tus cursos son:")
+        for curso in cursos[user]:
+            print(f"- {curso}")
+        print()
+    else:
+        print("Aún no tienes cursos registrados.\n")
+
+def consultar_notas(user):
+    nota = notas.get(user)
+    if nota is not None:
+        print(f"Tu nota es: {nota}\n")
+    else:
+        print("Aún no tienes una nota registrada.\n")
+
